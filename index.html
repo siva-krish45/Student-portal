@@ -16,7 +16,7 @@
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-		
+
 
 </head>
 
@@ -26,57 +26,75 @@
     <div id="loading-content"></div>
   </div>
   <div id="allContent" style="display: none;">
-    <div id="navbar"></div>
+    <div id="navbar">
+      
+    </div>
 
-    <header>
-      <div class="main-name">
-        <img class="logo" src="./images/logo.png" alt="">
-        <h1 class="heading">STUDENT PORTAL</h1>
+    <section class="home" id="home">
+      <div class="max-width">   
+        <div class="home-content">
+          <div class="text-1">Hello, this is</div>
+          <div class="text-2 heading">STUDENT PORTAL</div>
+          <a href="#services">Get started</a>
+        </div>     
       </div>
-    </header>
-
-    <main data-aos="fade-left">
-      <div class="tools-heading">
-        <h2>Tools<span class="toolsicon">⚙️</span></h2>
+      <div class="img-home">
+        <div class="image">
+        <img src="./images/illu2.png" alt="" >
       </div>
-      <div class="tools-items">
-        <div class="row">
-          <img class="tools-img" src="./images/image.png" alt="" />
-          <button><a href="./Img-to-Pdf/index.html">Image to PDF</a></button>
-        </div>
-        <div class="row">
-          <img class="tools-img" src="./images/docs.png" alt="" style="padding-bottom: 25px" />
-          <button><a href="./Word-to-Pdf/index.html">Document to PDF</a></button>
-        </div>
-        <div class="row">
-          <img class="tools-img" src="./images/text.png" alt="" />
-          <button><a href="./Text-to-pdf/index.html">Text to PDF</a></button>
-        </div>
-        <div class="row">
-          <img class="tools-img" src="./images/zip.png" alt="" />
-          <button><a href="./Extractzip/index.html">Extract zip file</a></button>
-        </div>
-        <div class="row">
-          <img class="tools-img resize-img" src="./images/Imgresize.png" alt="" />
-          <button><a href="./imageresize.html">Resize Image</a></button>
-        </div>
       </div>
+    </section>
+  
+    <!-- About section  -->
     <div data-aos="fade-right">
       <div class="tools-heading about-section" id="about-section">
         <h2>About 📑</h2>
       </div>
       <div class="about-content">
+        <p>
         This is easy-to-use, user-friendly interactive webapp includes all tools that might help students and professionals
         in urgencies, like convertors for text files, documents and images to pdf, extracting .zip files. <br> Now get
         your work done in few minutes without investing time on any third-party applications. The need to navigate to
         several sites is over! Come to Student-Portal, choose your action tool, drop your file, get the work done,
         download the same. And it's done. Yeah! It's that simple. <br>
-        Hope you liked our work. In case of any queries, feel free to drop us a <a href="#"
-          style="text-decoration: underline; color: aliceblue;">mail</a>.
+        Hope you liked our work. In case of any queries, feel free to mail us. <br> </p>
+       <span class="mail"> <a href="#">Mail</a></span>
 
       </div>
     </div>
+
+    <!-- Services section  -->
+    <div id="services">
+    <main data-aos="fade-left">
+      <div class="tools-heading">
+        <h2>Our services<span class="toolsicon">⚙️</span></h2>
+      </div>
+      <div class="tools-items">
+        <div class="row">
+          <img class="tools-img" src="./images/image.png" alt="" />
+          <button><a href="./Functionalities/Img-to-Pdf/index.html">Image to PDF</a></button>
+        </div>
+        <div class="row">
+          <img class="tools-img" src="./images/docs.png" alt="" style="padding-bottom: 25px" />
+          <button><a href="./Functionalities/Word-to-Pdf/">Document to PDF</a></button>
+        </div>
+        <div class="row">
+          <img class="tools-img" src="./images/text.png" alt="" />
+          <button><a href="./Functionalities/Text-to-pdf/index.html">Text to PDF</a></button>
+        </div>
+        <div class="row">
+          <img class="tools-img" src="./images/zip.png" alt="" />
+          <button><a href="./Functionalities/Extract-Zip/index.html">Extract zip file</a></button>
+        </div>
+        <div class="row">
+          <img class="tools-img resize-img" src="./images/Imgresize.png" alt="" />
+          <button><a href="./Functionalities/Resize-Image/index.html">Resize Image</a></button>
+        </div>
+      </div>
     </main>
+  </div>
+
+    <!-- Footer part  -->
     <footer>
 
       <div>
@@ -97,27 +115,36 @@
     <span>
       <section id="section_chatbot">
         <a class="float" id="float">
-          <img src="./images/chatbot.png" id="roboImg">
+          <img src="./images/chatbot2.png" id="roboImg">
         </a>
-        <!-- <div class="popup" style="width:500px;height:500px;"> -->
+        
         <div class="popup" id="popup">
+          <div class="header-chat">
+          <img src="./images/admin.png" class="avatar" alt="">
+          <span class="name"> Shirley </span>
+              <button class="crossbtn" onclick="hide()">X</button>
+        </div>
+
+        
           <div class="textarea">
             <div class="roboside">
-              <img src="./images/logo.png" class="avatar" alt="">
-              <span class="robomsg">Hello! Are you a new Student?</span>
-              <button class="crossbtn" onclick="hide()">X</button>
+              <img src="./images/admin.png" class="avatar-chat" alt="">
+              <span class="robomsg">Hello! How can we help you?</span>
             </div>
           </div>
+
           <div class="input-area">
             <input type="text" id="msg" placeholder="Yes or No">
             <button type="submit" class="submit">Send</button>
           </div>
         </div>
+
       </section>
     </span>
 
     <!-- Scripts for Chatbot -->
     <script src="./js/popup_chatbot.js"></script>
+    <script src="./js/darkmode_toggle.js"></script>
 
     <!-- chatbot implementation-->
 
@@ -125,11 +152,11 @@
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
       AOS.init({
-        offset:400,
-        duration:1000
+        offset: 400,
+        duration: 1000
       });
     </script>
- 
+
   </div>
 
 </html>
