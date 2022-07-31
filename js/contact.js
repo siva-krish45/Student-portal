@@ -20,11 +20,11 @@ navbar.innerHTML = `<nav>
         <span class="slider round"></span>
     </label>
   </div></li>
-    <li><a class="btn active" href="./index.html#home">Home</a></li>
+    <li><a class="btn" href="./index.html#home">Home</a></li>
     <li><a class="btn"  href="./index.html#about-section">About</a></li>
     <li><a class="btn" href="./index.html#services">Services</a></li>
     <li><a class="btn" href="./index.html#testi">Testimonials</a></li>
-    <li><a class="btn" href="./contact.html">Contact</a></li>
+    <li><a class="btn active" href="./contact.html">Contact</a></li>
 </ul>
 </div>
 </nav>`;
@@ -37,6 +37,54 @@ window.onload = function () {
   loader.style.display = "none";
   page.style.display = "";
 };
+function validatef() {
+  var regex = /^[a-zA-Z]+$/;
+  var name = document.getElementById("firstname").value;
+  if (!regex.test(name)) {
+    // alert("invalid first name");
+    document.getElementById("fname").style.color = "red";
+    document.getElementById("fname").innerHTML = "invalid";
+    return false;
+  } else {
+    document.getElementById("fname").style.color = "yellow";
+    document.getElementById("fname").innerHTML = "valid";
+    return true;
+  }
+}
+function validatel() {
+  var regex = /^[a-zA-Z]+$/;
+  var name = document.getElementById("lastname").value;
+  if (!regex.test(name)) {
+    //alert("invalid last name");
+    document.getElementById("lname").style.color = "red";
+    document.getElementById("lname").innerHTML = "invalid";
+    return false;
+  } else {
+    document.getElementById("lname").style.color = "yellow";
+    document.getElementById("lname").innerHTML = "valid";
+    return true;
+  }
+}
+function validatemail() {
+  var regex = /^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$/;
+  var name = document.getElementById("email").value;
+  if (!regex.test(name)) {
+    // alert("invalid email");
+    document.getElementById("mail").style.color = "red";
+    document.getElementById("mail").innerHTML = "invalid";
+    return false;
+  } else {
+    document.getElementById("mail").style.color = "yellow";
+    document.getElementById("mail").innerHTML = "valid";
+    return true;
+  }
+}
+function submit() {
+  if (validatef() == false || validatel() == false || validatemail() == false)
+    alert("Please enter valid values");
+  else alert("Thank you, we will respond to you soon.");
+}
+
 // Get the container element
 var btnContainer = document.getElementById("myDIV");
 
@@ -51,15 +99,3 @@ for (var i = 0; i < btns.length; i++) {
     this.className += " active";
   });
 }
-
-// scrolling navbar activity
-const li = document.querySelectorAll(".btn");
-const sec = document.querySelectorAll("section");
-function activeMenu(){
-  let len = sec.length;
-  while(--len && window.scrollY + 70 < sec[len].offsetTop){}
-  li.forEach(ltx => ltx.classList.remove("active"));
-  li[len].classList.add("active");
-}
-activeMenu();
-window.addEventListener("scroll",activeMenu);
